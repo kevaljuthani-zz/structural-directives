@@ -1,0 +1,16 @@
+<h2 *ngIf = "displayName; else elseBlock">
+  Welcome to Structural Directives!
+</h2>
+<ng-template #elseBlock>
+  <h2>
+    Message is hidden!
+  </h2>
+</ng-template>
+
+<div *ngIf = "displayName; then thenBlock; else thenElseBlock"></div>
+<ng-template #thenBlock>
+  <h2>Hi</h2>
+</ng-template>
+<ng-template #thenElseBlock>
+  <h2>Bye</h2>
+</ng-template>
