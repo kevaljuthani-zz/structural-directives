@@ -14,3 +14,14 @@
 <ng-template #thenElseBlock>
   <h2>Bye</h2>
 </ng-template>
+
+<div [ngSwitch] = "color">
+  <div *ngSwitchCase="'red'">You picked Red Color</div>
+  <div *ngSwitchCase="'blue'">You picked Blue Color</div>
+  <div *ngSwitchCase="'green'">You picked Green Color</div>
+  <div *ngSwitchDefault>Pick again mate!</div>
+</div>
+
+<div *ngFor = "let color of colors; index as i; first as f; last as l; odd as o; even as e">
+  <h2>{{i}} {{f}} {{l}} {{o}} {{e}} {{color}}</h2>
+</div>
