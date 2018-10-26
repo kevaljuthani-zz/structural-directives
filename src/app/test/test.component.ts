@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -6,12 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-displayName = true;
-public color = 'orange';
-public colors = ['red', 'green', 'blue', 'yellow'];
+  displayName = true;
+  public color = 'orange';
+  public colors = ['red', 'green', 'blue', 'yellow'];
+
+  public namePipe = "KevalJuthani";
+  public message = "Welcome to keval solutions";
+  public person = {
+    "firstName": "John",
+    "lastName": "Doe"
+  };
+
+  @Input('parentData') public name;
+
+  @Output() public childEvent = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  sendEvent() {
+    this.childEvent.emit('Hey World!');
   }
 
 }
