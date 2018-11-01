@@ -16,6 +16,7 @@ export class TestComponent implements OnInit {
     "firstName": "John",
     "lastName": "Doe"
   };
+  public date = new Date();
 
   @Input('parentData') public name;
 
